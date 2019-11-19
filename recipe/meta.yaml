@@ -9,7 +9,7 @@ source:
   sha256: d18aaca2d79a10270d49ad1aaa01dce24752f7548880138d59874a78ac62e11f
 
 build:
-  number: 0
+  number: 1
   # ghostscript and gnuplot not available
   skip: True  # [win]
 
