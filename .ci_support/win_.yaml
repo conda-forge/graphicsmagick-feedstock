@@ -1,19 +1,13 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
 bzip2:
 - '1'
 c_compiler:
-- clang
-c_compiler_version:
-- '9'
+- vs2015
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- clangxx
-cxx_compiler_version:
-- '9'
+- vs2015
 freetype:
 - 2.9.1
 jpeg:
@@ -22,14 +16,6 @@ libpng:
 - '1.6'
 libtiff:
 - 4.1.0
-libwebp:
-- '1.0'
-libxml2:
-- '2.9'
-macos_machine:
-- x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 pin_run_as_build:
   bzip2:
     max_pin: x
@@ -41,15 +27,11 @@ pin_run_as_build:
     max_pin: x.x
   libtiff:
     max_pin: x
-  libwebp:
-    max_pin: x.x
-  libxml2:
-    max_pin: x.x
-  xz:
-    max_pin: x.x
+  vc:
+    max_pin: x
   zlib:
     max_pin: x.x
-xz:
-- '5.2'
+vc:
+- '14'
 zlib:
 - '1.2'
