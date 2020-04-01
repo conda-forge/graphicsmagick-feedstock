@@ -5,55 +5,60 @@ package:
   version: {{ version }}
 
 source:
-  url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/{{ version }}/GraphicsMagick-{{ version }}.tar.bz2
-  sha256: d18aaca2d79a10270d49ad1aaa01dce24752f7548880138d59874a78ac62e11f
+  - url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/{{ version }}/GraphicsMagick-{{ version }}.tar.bz2
+    sha256: d18aaca2d79a10270d49ad1aaa01dce24752f7548880138d59874a78ac62e11f
+  - path: CMakeLists.txt
 
 build:
-  number: 0
+  number: 1
   # ghostscript and gnuplot not available
-  skip: True  # [win]
+  skip: True  # [win and vc<14]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - cmake  # [win]
+    - ninja  # [win]
   host:
-    - ghostscript
-    - libpng
-    - gnuplot
-    - xorg-libsm
-    - libwebp
-    - freetype
-    - xorg-libxext
-    - xorg-libxdmcp
-    - xorg-libxau
-    - libtiff
-    - jpeg
+    - ghostscript  # [unix]
+    - gnuplot  # [unix]
+    - xorg-libsm  # [unix]
+    - libwebp  # [unix]
+    - xorg-libxext  # [unix]
+    - xorg-libxdmcp  # [unix]
+    - xorg-libxau  # [unix]
+    - libxml2  # [unix]
+    - xz  # [unix]
     - bzip2
-    - libxml2
-    - xz
+    - jpeg
+    - libpng
+    - freetype
+    - libtiff
     - zlib
   run:
-    - ghostscript
-    - libpng
-    - gnuplot
-    - xorg-libsm
-    - libwebp
-    - freetype
-    - xorg-libxext
-    - xorg-libxdmcp
-    - xorg-libxau
-    - xorg-libx11
-    - libtiff
-    - jpeg
+    - ghostscript  # [unix]
+    - gnuplot  # [unix]
+    - xorg-libsm  # [unix]
+    - libwebp  # [unix]
+    - xorg-libxext  # [unix]
+    - xorg-libxdmcp  # [unix]
+    - xorg-libxau  # [unix]
+    - libxml2  # [unix]
+    - xz  # [unix]
     - bzip2
-    - libxml2
-    - xz
+    - jpeg
+    - libpng
+    - freetype
+    - libtiff
     - zlib
 
 test:
   commands:
     - gm -help
+    - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagick.dll exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagick++.dll exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagickWand.dll exit 1  # [win]
 
 about:
   home: http://www.graphicsmagick.org/
@@ -64,3 +69,4 @@ about:
 extra:
   recipe-maintainers:
     - bgruening
+    - seanyen
