@@ -10,7 +10,7 @@ source:
   - path: CMakeLists.txt
 
 build:
-  number: 1
+  number: 0
   # ghostscript and gnuplot not available
   skip: True  # [win and vc<14]
 
