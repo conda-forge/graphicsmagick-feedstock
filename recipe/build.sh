@@ -3,3 +3,5 @@
 ./configure --prefix=$PREFIX --enable-shared --enable-symbol-prefix
 make
 make install
+
+ls -l $PREFIX/lib
