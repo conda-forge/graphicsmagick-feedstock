@@ -22,12 +22,12 @@ requirements:
     - ninja  # [win]
   host:
     - ghostscript  # [unix]
-    - gnuplot  # [osx]
+    - gnuplot  # [unix]
     - libwebp  # [unix]
-    - xorg-libsm  # [osx]
-    - xorg-libxext  # [osx]
-    - xorg-libxdmcp  # [osx]
-    - xorg-libxau  # [osx]
+    - xorg-libsm  # [unix]
+    - xorg-libxext  # [unix]
+    - xorg-libxdmcp  # [unix]
+    - xorg-libxau  # [unix]
     - libxml2  # [unix]
     - xz  # [unix]
     - bzip2
@@ -38,12 +38,12 @@ requirements:
     - zlib
   run:
     - ghostscript  # [unix]
-    - gnuplot  # [osx]
+    - gnuplot  # [unix]
     - libwebp  # [unix]
-    - xorg-libsm  # [osx]
-    - xorg-libxext  # [osx]
-    - xorg-libxdmcp  # [osx]
-    - xorg-libxau  # [osx]
+    - xorg-libsm  # [unix]
+    - xorg-libxext  # [unix]
+    - xorg-libxdmcp  # [unix]
+    - xorg-libxau  # [unix]
     - libxml2  # [unix]
     - xz  # [unix]
     - bzip2
