@@ -36,6 +36,7 @@ requirements:
     - xorg-libxext  # [linux]
     - xorg-libxdmcp  # [linux]
     - xorg-libxau  # [linux]
+    - libgomp      # [linux]
     - xz  # [linux]
 
   run:
@@ -54,7 +55,7 @@ requirements:
     - xorg-libxext  # [linux]
     - xorg-libx11  # [linux]
     - xorg-libice  # [linux]
-    - _openmp_mutex  # [linux]
+    - libgomp      # [linux]
     - xz  # [linux]
 
 test:
