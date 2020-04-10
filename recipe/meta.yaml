@@ -21,37 +21,41 @@ requirements:
     - cmake  # [win]
     - ninja  # [win]
   host:
-    - ghostscript  # [unix]
-    - gnuplot  # [unix]
-    - libwebp  # [unix]
-    - xorg-libsm  # [unix]
-    - xorg-libxext  # [unix]
-    - xorg-libxdmcp  # [unix]
-    - xorg-libxau  # [unix]
-    - libxml2  # [unix]
-    - xz  # [unix]
     - bzip2
     - jpeg
     - libpng
     - freetype
     - libtiff
     - zlib
+    - ghostscript  # [unix]
+    - gnuplot  # [unix]
+    - libwebp  # [unix]
+    - libxml2  # [unix]
+    - zstd  # [unix]
+    - xorg-libsm  # [linux]
+    - xorg-libxext  # [linux]
+    - xorg-libxdmcp  # [linux]
+    - xorg-libxau  # [linux]
+    - xz  # [linux]
+
   run:
-    - ghostscript  # [unix]
-    - gnuplot  # [unix]
-    - libwebp  # [unix]
-    - xorg-libsm  # [unix]
-    - xorg-libxext  # [unix]
-    - xorg-libxdmcp  # [unix]
-    - xorg-libxau  # [unix]
-    - libxml2  # [unix]
-    - xz  # [unix]
-    - bzip2
-    - jpeg
+    - bzip2  # [unix]
+    - jpeg  # [unix]
     - libpng
     - freetype
     - libtiff
     - zlib
+    - ghostscript  # [unix]
+    - gnuplot  # [unix]
+    - libwebp  # [unix]
+    - libxml2  # [unix]
+    - zstd  # [unix]
+    - xorg-libsm  # [linux]
+    - xorg-libxext  # [linux]
+    - xorg-libx11  # [linux]
+    - xorg-libice  # [linux]
+    - _openmp_mutex  # [linux]
+    - xz  # [linux]
 
 test:
   commands:
