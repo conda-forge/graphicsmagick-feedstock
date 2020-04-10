@@ -55,7 +55,6 @@ requirements:
     - xorg-libxext  # [linux]
     - xorg-libx11  # [linux]
     - xorg-libice  # [linux]
-    - libgomp      # [linux]
     - xz  # [linux]
 
 test:
