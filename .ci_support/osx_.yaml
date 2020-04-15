@@ -45,11 +45,11 @@ pin_run_as_build:
     max_pin: x.x
   libxml2:
     max_pin: x.x
-  xz:
-    max_pin: x.x
   zlib:
     max_pin: x.x
-xz:
-- '5.2'
+  zstd:
+    max_pin: x.x.x
 zlib:
 - '1.2'
+zstd:
+- 1.4.4
