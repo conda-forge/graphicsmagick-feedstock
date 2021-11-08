@@ -22,6 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake  # [win]
     - ninja  # [win]
+    - make  # [unix]
   host:
     - bzip2
     - jpeg
