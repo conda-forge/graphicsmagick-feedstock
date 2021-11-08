@@ -12,7 +12,7 @@ source:
   - path: CMakeLists.txt  # [win]
 
 build:
-  number: 0
+  number: 1
   # ghostscript and gnuplot not available
   skip: true  # [win and vc<14]
 
@@ -22,6 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake  # [win]
     - ninja  # [win]
+    - make  # [unix]
   host:
     - bzip2
     - jpeg

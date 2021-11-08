@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-./configure --prefix=$PREFIX --enable-shared --enable-symbol-prefix
+./configure --prefix=$PREFIX --enable-shared --enable-symbol-prefix --disable-dependency-tracking
 make
 make install
 
