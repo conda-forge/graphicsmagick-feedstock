@@ -1,4 +1,4 @@
-{% set version = "1.3.37" %}
+{% set version = "1.3.38" %}
 
 package:
   name: graphicsmagick
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/{{ version }}/GraphicsMagick-{{ version }}.tar.bz2
-    sha256: 735c1499c9de3d765cf12af43084c3198510efa6195c0bfdf6bff6a107481af3
+    sha256: 040ff30a2a9decc44ba67eb70da66b688841fc95fa9de9fcd3f41083378864ff
     patches:
       - windows.patch  # [win]
   - path: CMakeLists.txt  # [win]
