@@ -1,11 +1,11 @@
-About graphicsmagick
-====================
+About graphicsmagick-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/graphicsmagick-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.graphicsmagick.org/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/graphicsmagick-feedstock/blob/main/LICENSE.txt)
 
 Summary: GraphicsMagick is the swiss army knife of image processing
 
