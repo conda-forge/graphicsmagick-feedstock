@@ -12,7 +12,7 @@ source:
   - path: CMakeLists.txt  # [win]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -24,7 +24,7 @@ requirements:
     - make  # [unix]
   host:
     - bzip2
-    - jpeg
+    - libjpeg-turbo
     - libpng
     - freetype
     - libtiff
@@ -43,7 +43,7 @@ requirements:
 
   run:
     - bzip2  # [unix]
-    - jpeg  # [unix]
+    - libjpeg-turbo   # [unix]
     - libpng
     - freetype
     - libtiff
