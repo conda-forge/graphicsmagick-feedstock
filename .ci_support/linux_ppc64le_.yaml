@@ -27,7 +27,7 @@ libtiff:
 libwebp:
 - '1'
 libxml2:
-- '2.11'
+- '2'
 target_platform:
 - linux-ppc64le
 xz:
