@@ -1,15 +1,3 @@
-diff --color -Naur GraphicsMagick-1.3.37.orig/magick/static.c GraphicsMagick-1.3.37/magick/static.c
---- GraphicsMagick-1.3.37.orig/magick/static.c	2019-12-24 12:20:26.000000000 -0300
-+++ GraphicsMagick-1.3.37/magick/static.c	2021-12-15 13:08:22.418345442 -0300
-@@ -188,7 +188,7 @@
-   STATICM("XCF",RegisterXCFImage,UnregisterXCFImage),
-   STATICM("XPM",RegisterXPMImage,UnregisterXPMImage),
- #if defined(_VISUALC_)
--  STATICM("XTRN",RegisterXTRNImage,UnregisterXTRNImage),
-+  // STATICM("XTRN",RegisterXTRNImage,UnregisterXTRNImage),
- #endif /* defined(_VISUALC_) */
- #if defined(HasX11)
-   STATICM("XWD",RegisterXWDImage,UnregisterXWDImage),
 diff --color -Naur GraphicsMagick-1.3.37.orig/magick/static.h GraphicsMagick-1.3.37/magick/static.h
 --- GraphicsMagick-1.3.37.orig/magick/static.h	2019-06-15 11:05:05.000000000 -0300
 +++ GraphicsMagick-1.3.37/magick/static.h	2021-12-15 13:08:49.608734421 -0300
