@@ -3,7 +3,7 @@
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./TclMagick/unix/config
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./config
 
-./configure --prefix=$PREFIX --enable-shared --enable-symbol-prefix --disable-dependency-tracking
+./configure --prefix=$PREFIX --enable-shared --enable-symbol-prefix --disable-dependency-tracking --with-quantum-depth=16 --disable-static --with-magick-plus-plus=yes
 make
 make install
 
