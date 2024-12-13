@@ -12,7 +12,7 @@ source:
   - path: CMakeLists.txt  # [win]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -40,7 +40,7 @@ requirements:
     - xorg-libxdmcp  # [linux]
     - xorg-libxau  # [linux]
     - libgomp      # [linux]
-    - xz  # [linux]
+    - liblzma-devel  # [linux]
 
   run:
     - bzip2  # [unix]
@@ -58,7 +58,7 @@ requirements:
     - xorg-libxext  # [linux]
     - xorg-libx11  # [linux]
     - xorg-libice  # [linux]
-    - xz  # [linux]
+    - liblzma-devel  # [linux]
 
 test:
   commands:
