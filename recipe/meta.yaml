@@ -12,7 +12,7 @@ source:
   - path: CMakeLists.txt  # [win]
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -32,7 +32,7 @@ requirements:
     - zlib
     - ghostscript  # [unix]
     - libwebp  # [unix]
-    - libxml2  # [unix]
+    - libxml2-devel  # [unix]
     - zstd  # [unix]
     - xorg-libsm  # [linux]
     - xorg-libxext  # [linux]
@@ -50,7 +50,7 @@ requirements:
     - zlib
     - ghostscript  # [unix]
     - libwebp  # [unix]
-    - libxml2  # [unix]
+    - libxml2-devel  # [unix]
     - zstd  # [unix]
     - xorg-libsm  # [linux]
     - xorg-libxext  # [linux]
