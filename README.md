@@ -3,11 +3,24 @@ About graphicsmagick-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/graphicsmagick-feedstock/blob/main/LICENSE.txt)
 
+
+About graphicsmagick
+--------------------
+
 Home: http://www.graphicsmagick.org/
 
 Package license: MIT
 
 Summary: GraphicsMagick is the swiss army knife of image processing
+
+About graphicsmagick-imagemagick-compat
+---------------------------------------
+
+Home: http://www.graphicsmagick.org/
+
+Package license: MIT
+
+Summary: ImageMagick-compatible command shortcuts (convert, identify, ...) for GraphicsMagick
 
 Current build status
 ====================
@@ -61,6 +74,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-graphicsmagick-green.svg)](https://anaconda.org/conda-forge/graphicsmagick) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/graphicsmagick.svg)](https://anaconda.org/conda-forge/graphicsmagick) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/graphicsmagick.svg)](https://anaconda.org/conda-forge/graphicsmagick) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/graphicsmagick.svg)](https://anaconda.org/conda-forge/graphicsmagick) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-graphicsmagick--imagemagick--compat-green.svg)](https://anaconda.org/conda-forge/graphicsmagick-imagemagick-compat) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/graphicsmagick-imagemagick-compat.svg)](https://anaconda.org/conda-forge/graphicsmagick-imagemagick-compat) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/graphicsmagick-imagemagick-compat.svg)](https://anaconda.org/conda-forge/graphicsmagick-imagemagick-compat) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/graphicsmagick-imagemagick-compat.svg)](https://anaconda.org/conda-forge/graphicsmagick-imagemagick-compat) |
 
 Installing graphicsmagick
 =========================
@@ -79,7 +93,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install graphicsmagick
+conda install graphicsmagick graphicsmagick-imagemagick-compat
 ```
 
 </details>
@@ -88,7 +102,7 @@ conda install graphicsmagick
 <summary>With mamba</summary>
 
 ```
-mamba install graphicsmagick
+mamba install graphicsmagick graphicsmagick-imagemagick-compat
 ```
 
 </details>
@@ -98,9 +112,9 @@ mamba install graphicsmagick
 
 ```
 # for adding to your local project
-pixi add graphicsmagick
+pixi add graphicsmagick graphicsmagick-imagemagick-compat
 # for installing globally
-pixi global install graphicsmagick
+pixi global install graphicsmagick graphicsmagick-imagemagick-compat
 ```
 
 </details>
@@ -154,6 +168,7 @@ mamba repoquery depends graphicsmagick --channel conda-forge
 </details>
 
 
+
 About conda-forge
 =================
 
@@ -168,9 +183,7 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
-[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+[Azure](https://azure.microsoft.com/en-us/services/devops/) and [GitHub](https://github.com/)
 it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.

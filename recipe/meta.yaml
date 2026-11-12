@@ -12,7 +12,7 @@ source:
   - path: CMakeLists.txt  # [win]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -41,29 +41,105 @@ requirements:
     - libgomp      # [linux]
     - liblzma-devel  # [linux]
 
-  run:
-    - bzip2  # [unix]
-    - libjpeg-turbo   # [unix]
-    - libpng
-    - freetype
-    - libtiff
-    - zlib
-    - ghostscript  # [unix]
-    - libwebp  # [unix]
-    - libxml2-devel  # [unix]
-    - zstd  # [unix]
-    - xorg-libsm  # [linux]
-    - xorg-libxext  # [linux]
-    - xorg-libx11  # [linux]
-    - xorg-libice  # [linux]
-    - liblzma-devel  # [linux]
+outputs:
+  - name: graphicsmagick
+    script: install_gm.sh  # [unix]
+    requirements:
+      build:
+        - gnuconfig  # [unix]
+        - {{ compiler('c') }}
+        - {{ stdlib("c") }}
+        - {{ compiler('cxx') }}
+        - make  # [unix]
+        - cmake  # [win]
+        - ninja  # [win]
+      host:
+        - bzip2
+        - libjpeg-turbo
+        - libpng
+        - freetype
+        - libtiff
+        - zlib
+        - ghostscript  # [unix]
+        - libwebp  # [unix]
+        - libxml2-devel  # [unix]
+        - zstd  # [unix]
+        - xorg-libsm  # [linux]
+        - xorg-libxext  # [linux]
+        - xorg-libxdmcp  # [linux]
+        - xorg-libxau  # [linux]
+        - libgomp  # [linux]
+        - liblzma-devel  # [linux]
+      run:
+        - bzip2  # [unix]
+        - libjpeg-turbo  # [unix]
+        - libpng
+        - freetype
+        - libtiff
+        - zlib
+        - ghostscript  # [unix]
+        - libwebp  # [unix]
+        - zstd  # [unix]
+        - xorg-libsm  # [linux]
+        - xorg-libxext  # [linux]
+        - xorg-libx11  # [linux]
+        - xorg-libice  # [linux]
+    test:
+      commands:
+        - gm -help
+        - test ! -e $PREFIX/bin/convert  # [unix]
+        - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagick.dll exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagick++.dll exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagickWand.dll exit 1  # [win]
 
-test:
-  commands:
-    - gm -help
-    - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagick.dll exit 1  # [win]
-    - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagick++.dll exit 1  # [win]
-    - if not exist %LIBRARY_PREFIX%\\bin\\GraphicsMagickWand.dll exit 1  # [win]
+  - name: graphicsmagick-imagemagick-compat
+    script: install_compat.sh
+    build:
+      skip: true  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ stdlib("c") }}
+        - {{ compiler('cxx') }}
+        - make
+      host:
+        - {{ pin_subpackage('graphicsmagick', exact=True) }}
+        - bzip2
+        - libjpeg-turbo
+        - libpng
+        - freetype
+        - libtiff
+        - zlib
+        - ghostscript
+        - libwebp
+        - libxml2-devel
+        - zstd
+        - xorg-libsm  # [linux]
+        - xorg-libxext  # [linux]
+        - xorg-libxdmcp  # [linux]
+        - xorg-libxau  # [linux]
+        - libgomp  # [linux]
+        - liblzma-devel  # [linux]
+      run:
+        - {{ pin_subpackage('graphicsmagick', exact=True) }}
+      run_constrained:
+        - imagemagick <0.0a0
+    test:
+      commands:
+        - convert -version
+        - identify -version
+        - mogrify -version
+        - composite -version
+        - montage -version
+        - test -L $PREFIX/bin/convert
+        - test "$(readlink $PREFIX/bin/convert)" = "gm"
+        - test "$(readlink $PREFIX/bin/identify)" = "gm"
+    about:
+      home: http://www.graphicsmagick.org/
+      license: MIT
+      license_file: Copyright.txt
+      summary: ImageMagick-compatible command shortcuts (convert, identify, ...) for GraphicsMagick
+
 
 about:
   home: http://www.graphicsmagick.org/
