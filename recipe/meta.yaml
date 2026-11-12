@@ -46,10 +46,13 @@ outputs:
     script: install_gm.sh  # [unix]
     requirements:
       build:
+        - gnuconfig  # [unix]
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - make  # [unix]
+        - cmake  # [win]
+        - ninja  # [win]
       host:
         - bzip2
         - libjpeg-turbo
@@ -76,13 +79,11 @@ outputs:
         - zlib
         - ghostscript  # [unix]
         - libwebp  # [unix]
-        - libxml2-devel  # [unix]
         - zstd  # [unix]
         - xorg-libsm  # [linux]
         - xorg-libxext  # [linux]
         - xorg-libx11  # [linux]
         - xorg-libice  # [linux]
-        - liblzma-devel  # [linux]
     test:
       commands:
         - gm -help
